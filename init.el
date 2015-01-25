@@ -109,9 +109,6 @@
 ;; Electric pair (autocomplete parens)
 (electric-pair-mode 1)
 
-;; start new lines at the same indentation level
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
 ;; Add a directory to our load path so that when you `load` things
 ;; Below, Emacs Knows Where to look for the corresponding file.
 (add-to-list 'load-path "~/.emacs.d/customizations")

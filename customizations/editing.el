@@ -69,4 +69,5 @@
       (ns-get-selection-internal 'CLIPBOARD)
     (quit nil)))
 
-(setq electric-indent-mode nil)
+;; automatically indent after lines
+(setq electric-indent-mode +1)
