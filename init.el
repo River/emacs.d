@@ -102,6 +102,9 @@
 ;; Customization
 ;;;;
 
+;; Start emacsclient server to use ec from command line
+(server-start)
+
 ;; Add a directory to our load path so that when you `load` things
 ;; Below, Emacs Knows Where to look for the corresponding file.
 (add-to-list 'load-path "~/.emacs.d/customizations")
@@ -130,3 +133,9 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+
+;; Smooth scrolling
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
