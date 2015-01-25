@@ -33,18 +33,18 @@
 (defvar my-packages
   '(;; makes handling lisp expressions much, much easier
     ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-    paredit
+    ;; paredit
 
     ;; key bindings and code colorization for Clojure
     ;; https://github.com/clojure-emacs/clojure-mode
-    clojure-mode
+    ;; clojure-mode
 
     ;; extra syntax highlighting for clojure
-    clojure-mode-extra-font-locking
+    ;; clojure-mode-extra-font-locking
 
     ;; integration with a Clojure REPL
     ;; https://github.com/clojure-emacs/cider
-    cider
+    ;; cider
 
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
@@ -66,7 +66,8 @@
     tagedit
 
     ;; git integration
-    magit))
+    magit
+))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -92,7 +93,7 @@
 ;;
 ;; (require 'yaml-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; 
+;;
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -104,6 +105,12 @@
 
 ;; Start emacsclient server to use ec from command line
 (server-start)
+
+;; Electric pair (autocomplete parens)
+(electric-pair-mode 1)
+
+;; start new lines at the same indentation level
+(define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; Add a directory to our load path so that when you `load` things
 ;; Below, Emacs Knows Where to look for the corresponding file.
